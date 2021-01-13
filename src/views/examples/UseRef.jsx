@@ -21,12 +21,12 @@ const UseRef = (props) => {
         myinput1.current.focus()
     }, [value2]);
 
-    const unify = function(n1, n2){
+    /*
+    const merge = function(s1, s2){
 
-       return n1 + n2
-    };
-
-
+           return [...s1].map((element, index)=>`${element}${s2[index] || ""}`).join("")
+    }
+    */
 
     return (
         <div className="UseRef">
@@ -37,7 +37,7 @@ const UseRef = (props) => {
             <SectionTitle title="Exercício 01" />
             <div className="center">
                 <div>
-                    <h2 className="center">Valor: {unify(value1, value2)} {count.current}</h2>
+                    <h2 className="center">Valor: {merge(value1, value2)} {count.current}</h2>
                     <input ref={myinput1} value={value1} type="text" className="input" onChange={(result) => { setValue1(result.target.value) }} />
                 </div>
             </div>
