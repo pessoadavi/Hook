@@ -34,6 +34,7 @@ const UseContext = (props) => {
                 <button className="btn" 
                  onClick={()=>{addNumber(-1)}}>-1</button><br/>
             <SectionTitle title="Exercício 02" />
+            
         </div>
     )
 }
