@@ -5,6 +5,7 @@ import React from 'react'
 import App from './views/App'
 
 ReactDOM.render(
-    <App />,
-    document.getElementById('root')
+
+     <App />,
+     document.getElementById('root')
 )

@@ -37,7 +37,9 @@ const UseRef = (props) => {
             <SectionTitle title="Exercício 01" />
             <div className="center">
                 <div>
-                    <h2 className="center">Valor: {merge(value1, value2)} {count.current}</h2>
+                    {/*<h2 className="center">Valor: {merge(value1, value2)} {count.current}</h2>*/}
+                    <h2 className="center">Valor:{count.current}</h2>
+
                     <input ref={myinput1} value={value1} type="text" className="input" onChange={(result) => { setValue1(result.target.value) }} />
                 </div>
             </div>
