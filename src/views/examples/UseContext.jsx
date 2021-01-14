@@ -3,7 +3,7 @@ import PageTitle from '../../components/layout/PageTitle'
 import SectionTitle from '../../components/layout/SectionTitle';
 
 import DataContext from '../../data/DataContext';
-import AppContext from '../../data/Store'
+import { AppContext } from '../../data/Store'
 
 const UseContext = (props) => {
 
@@ -17,7 +17,7 @@ const UseContext = (props) => {
 
     };
 
-    //const { number, setNumber } = useContext(AppContext);
+    const { number, setNumber } = useContext(AppContext);
 
     return (
         <div className="UseContext">
@@ -35,9 +35,9 @@ const UseContext = (props) => {
                 onClick={() => { addNumber(+1) }}>+1</button>
             <button className="btn"
                 onClick={() => { addNumber(-1) }}>-1</button><br />
-            
+
             <SectionTitle title="Exercício 02" />
-            {/*
+            
                 <div className="center">
                     <span className="text">{number}</span>
                     <button className="btn"
@@ -46,7 +46,7 @@ const UseContext = (props) => {
                         onClick={()=>{setNumber(number + 1)}}>+1</button>
                 </div>
             
-            */}
+            
 
         </div>
     )
