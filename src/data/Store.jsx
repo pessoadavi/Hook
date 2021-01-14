@@ -10,12 +10,12 @@ export const AppContext = React.createContext(initialState)
 
 const Store = (props) => {
 
-    const [state, setState] = useState(initialState);
+    const [state, setState] =  useState(initialState);
 
     function updateState(attribute, value){
-        setState({
-            ...state,
-            [attribute]:value
+        setState({                      // state é um obj devido initialState e setState é uma função que acessa os dados do obj
+            ...state,                   // clono o estado atual
+            [attribute]:value           // atualizo determinado atributo (precisa do colchetes) quando a função for chamada
         })
 
     }
@@ -23,10 +23,10 @@ const Store = (props) => {
     return ( 
 
         <AppContext.Provider value={{
-            number: state.setNumber,
-            text: state.setText,
-            setNumber: n => updateState('number',n),
-            setText: t => updateState('text', t)  
+            number: state.number,
+            text: state.text,
+            setNumber: n => updateState("number",n),
+            setText: t => updateState("text", t)  
         }} >
              {props.children}
         </AppContext.Provider>

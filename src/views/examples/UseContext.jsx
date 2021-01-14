@@ -3,19 +3,21 @@ import PageTitle from '../../components/layout/PageTitle'
 import SectionTitle from '../../components/layout/SectionTitle';
 
 import DataContext from '../../data/DataContext';
+import AppContext from '../../data/Store'
 
 const UseContext = (props) => {
-    
-    const context = useContext(DataContext);
 
-    function addNumber(numberReceived){
-        context.setState({
-            ...context.state,
-            number: context.state.number + numberReceived
+    const { state, setState } = useContext(DataContext);
+
+    function addNumber(numberReceived) {
+        setState({
+            ...state,
+            number: state.number + numberReceived
         })
 
     };
 
+    //const { number, setNumber } = useContext(AppContext);
 
     return (
         <div className="UseContext">
@@ -25,16 +27,27 @@ const UseContext = (props) => {
             />
             <SectionTitle title="Exercício 01" />
             <div className="center">
-                <span className="text">{context.state.text}</span>
-                <span className="text">{context.state.number}</span>
+                <span className="text">{state.text}</span>
+                <span className="text">{state.number}</span>
             </div>
-           
-                <button className="btn" 
-                 onClick={()=>{addNumber(+1)}}>+1</button>
-                <button className="btn" 
-                 onClick={()=>{addNumber(-1)}}>-1</button><br/>
-            <SectionTitle title="Exercício 02" />
+
+            <button className="btn"
+                onClick={() => { addNumber(+1) }}>+1</button>
+            <button className="btn"
+                onClick={() => { addNumber(-1) }}>-1</button><br />
             
+            <SectionTitle title="Exercício 02" />
+            {/*
+                <div className="center">
+                    <span className="text">{number}</span>
+                    <button className="btn"
+                        onClick={()=>{setNumber(number - 1)}}>-1</button>
+                        <button className="btn"
+                        onClick={()=>{setNumber(number + 1)}}>+1</button>
+                </div>
+            
+            */}
+
         </div>
     )
 }
