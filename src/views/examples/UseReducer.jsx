@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
 import SectionTitle from '../../components/layout/SectionTitle'
-
+import {initialState2, reducer2  } from "../../store/configExec02";
 
 const initialState = {
 
@@ -9,16 +9,6 @@ const initialState = {
     products: [],
     user: null,
     number: 0
-}
-
-/* Exercício 02 */
-const initialState2 = {
-
-    list: [],
-    users: [],
-    number: 1,
-    names: null
-
 }
 
 function reducer(state, action) {       // Função tá recebendo o estado atual da variável/objeto/array...
@@ -39,29 +29,7 @@ function reducer(state, action) {       // Função tá recebendo o estado atual
     }
 }
 
-/* Exercício 02 */
-function reducer2(state, action) {
 
-    switch (action.type) {
-
-        case 'multiple_7':
-            return { ...state, number: state.number * 7 }
-
-        case 'divide_25':
-            return { ...state, number: state.number / 2 }
-
-        case 'add_number':
-            return { ...state, number: action.payload }
-        
-            case 'numberInt':
-                return {...state, number: parseInt(state.number)}
-
-        default:
-            return state
-
-    }
-
-}
 
 const UseReducer = (props) => {
 
@@ -122,7 +90,7 @@ const UseReducer = (props) => {
                             className="input"
                             type="number"
                             value={state2.number}
-                            onChange={(result)=>{dispatch2({type:'add_number', payload: result})}}
+                            onChange={(result)=>{dispatch2({type:'add_number', payload: result.target.value})}}
                         />
                     </h2>
                 </div>
