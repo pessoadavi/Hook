@@ -13,23 +13,10 @@ const UseRef = (props) => {
 
     const showList = (data) => {
 
-        console.log(data)
-
-        return  (
-            data.forEach((element,index) => {
-            <li>
-                {element.nome[index]} - {element.sigla[index]}
-            </li>
-        })
-        )
-/*
-        return (
-            data.map(item => {
+        return data.map(item => {
 
             <li>{item.nome} - {item.sigla}</li>
-        )
         })
-*/
     }
 
     return (
@@ -54,6 +41,7 @@ const UseRef = (props) => {
                         {!response.loading ? showList(response.data) : 'Carregando...'}
                     </ul>
                 </div>
+
         </div>
     )
 }
