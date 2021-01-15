@@ -11,21 +11,21 @@ const initialState = {
     number: 0
 }
 
-function reducer(state, action) {       // Função tá recebendo o estado atual da variável/objeto/array...
-                                        // e as ações dos eventos dos botões para determinar o TIPO DA AÇÃO  
-                                        // e como alterará o estado atual da variável/obj/array...
-                                        // OBS: action é um obj que pode possuir parâmetros e neste caso
-                                        // recebe o parâmetro type e também o payload.
+function reducer(previousState, action) {       // Função tá recebendo o estado atual da variável/objeto/array...
+                                                // e as ações dos eventos dos botões para determinar o TIPO DA AÇÃO  
+                                                // e como alterará o estado atual da variável/obj/array...
+                                                // OBS: action é um obj que pode possuir parâmetros e neste caso
+                                                // recebe o parâmetro type e também o payload.
     switch (action.type) {
 
         case 'numberAdd2':
-            return { ...state, number: state.number + 2 }
+            return { ...previousState, number: previousState.number + 2 }
 
         case 'login':
-            return { ...state, user: { name: action.payload } }
+            return { ...previousState, user: { name: action.payload } }
 
         default:
-            return state
+            return previousState
     }
 }
 
