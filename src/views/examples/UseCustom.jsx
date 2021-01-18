@@ -11,11 +11,11 @@ const UseRef = (props) => {
     const url = 'http://files.cod3r.com.br/curso-react/estados.json'
     const response = useFetch(url)
 
-    const showList = (data) => {
+    function showList (data) {
 
         return data.map(item => {
 
-            <li>{item.nome} - {item.sigla}</li>
+            <li key={item.nome} >{item.nome} - {item.sigla}</li>
         })
     }
 
